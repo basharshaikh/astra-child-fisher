@@ -227,9 +227,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="fman-table fman-has-two-table">
 		<!-- Distribución de Activos -->
 		<?php 
-			$chart_act_circulante = ($ctas_total / $total_de_activos)*100;
-			$chart_invers = ($activo_invers_total / $total_de_activos)*100;
-			$chart_acti_fijo = ($activo_fiz_total / $total_de_activos)*100;
+			if($ctas_total !== 0 && $total_de_activos !== 0){
+				$chart_act_circulante = ($ctas_total / $total_de_activos)*100;
+			} else {
+				$chart_act_circulante = 0;
+			}
+			if($activo_invers_total !== 0 && $total_de_activos !== 0){
+				$chart_invers = ($activo_invers_total / $total_de_activos)*100;
+			} else {
+				$chart_invers = 0;
+			}
+			if($activo_fiz_total !== 0 && $total_de_activos !== 0){
+				$chart_acti_fijo = ($activo_fiz_total / $total_de_activos)*100;
+			} else {
+				$chart_acti_fijo = 0;
+			}
+			
 		?>
 		<table>			
 		<tr><td>
@@ -243,12 +256,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<!-- Distribución de Pasivos vs Activos -->
 		<?php 
-			$chart_act_pasiv_hipo = ($saldo_hipotec_total / $total_de_activos)*100;
-			$chart_act_pasiv_perso = ($saldo_personal_total / $total_de_activos)*100;
-			$chart_act_pasiv_credit = ($saldo_terjetas_total / $total_de_activos)*100;
-			$chart_act_pasiv_extra = ($saldo_amiento_total / $total_de_activos)*100;
-			$chart_act_pasiv_vehi = ($saldo_vehicle_total / $total_de_activos)*100;
-			$chart_act_pasiv_otro = ($saldo_otros_total / $total_de_activos)*100;
+			if($saldo_hipotec_total !== 0 && $total_de_activos !== 0){
+				$chart_act_pasiv_hipo = ($saldo_hipotec_total / $total_de_activos)*100;
+			} else {
+				$chart_act_pasiv_hipo = 0;
+			}
+			if($saldo_personal_total !== 0 && $total_de_activos !== 0){
+				$chart_act_pasiv_perso = ($saldo_personal_total / $total_de_activos)*100;
+			} else {
+				$chart_act_pasiv_perso = 0;
+			}
+			if($saldo_terjetas_total !== 0 && $total_de_activos !== 0){
+				$chart_act_pasiv_credit = ($saldo_terjetas_total / $total_de_activos)*100;
+			} else {
+				$chart_act_pasiv_credit = 0;
+			}
+			if($saldo_amiento_total !== 0 && $total_de_activos !== 0){
+				$chart_act_pasiv_extra = ($saldo_amiento_total / $total_de_activos)*100;
+			} else {
+				$chart_act_pasiv_extra = 0;
+			}
+			if($saldo_vehicle_total !== 0 && $total_de_activos !== 0){
+				$chart_act_pasiv_vehi = ($saldo_vehicle_total / $total_de_activos)*100;
+			} else {
+				$chart_act_pasiv_vehi = 0;
+			}
+			if($saldo_otros_total !== 0 && $total_de_activos !== 0){
+				$chart_act_pasiv_otro = ($saldo_otros_total / $total_de_activos)*100;
+			} else {
+				$chart_act_pasiv_otro = 0;
+			}
 		?>
 		<table>			
 		<tr><td>
