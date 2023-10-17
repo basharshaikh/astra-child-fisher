@@ -146,9 +146,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		    $proto_inv_ret_mans_act_total = 0;
 		    if($deposit_inve['depositos_e_inversiones_']){
 		    	foreach($deposit_inve['depositos_e_inversiones_'] as $dep_inv){
-		    		$proto_inv_ret_anu_act = ($dep_inv['retorno_%'])*($dep_inv['valor_actual']);
+		    		$proto_inv_ret_anu_act = intval($dep_inv['retorno_%']) * intval($dep_inv['valor_actual']);
 		    		$proto_inv_ret_mensu_act = $proto_inv_ret_anu_act / 12;
-		    		$proto_inv_valor_act_total += $dep_inv['valor_actual'];
+		    		$proto_inv_valor_act_total += intval($dep_inv['valor_actual']);
 				    $proto_inv_ret_anu_act_total += $proto_inv_ret_anu_act;
 				    $proto_inv_ret_mans_act_total += $proto_inv_ret_mensu_act;
 		    ?>
