@@ -201,9 +201,9 @@ $ctas_ahorr_total = 0;
 $ctas_corrient_total = 0;
 if($bl_cuentas_banca_efect['cuentas']){
   foreach ($bl_cuentas_banca_efect['cuentas'] as $cuentas) {
-    $ctas_planill_total += $cuentas['planillera'];
-    $ctas_ahorr_total   += $cuentas['ahorro'];
-    $ctas_corrient_total   += $cuentas['corriente'];
+    $ctas_planill_total += intval($cuentas['planillera']);
+    $ctas_ahorr_total   += intval($cuentas['ahorro']);
+    $ctas_corrient_total += intval($cuentas['corriente']);
   }
 }
 
