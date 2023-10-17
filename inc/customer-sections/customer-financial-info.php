@@ -363,9 +363,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		    	<td><?php echo $dep_inv['valor_actual'] ?>.00</td>
 		    	<td><?php echo $dep_inv['retorno_%'] ?>%</td>
 		    	<!-- anual return -->
-		    	<td><?php echo ($dep_inv['retorno_%'] * $dep_inv['valor_actual']) / 100 ?></td>
+		    	<td><?php echo (intval($dep_inv['retorno_%']) * intval($dep_inv['valor_actual'])) / 100 ?></td>
 		    	<!-- mensual return -->
-		    	<td><?php echo round(((($dep_inv['retorno_%'] * $dep_inv['valor_actual']) / 100)) / 12, 3) ?></td>
+		    	<td><?php echo round((((intval($dep_inv['retorno_%']) * intval($dep_inv['valor_actual'])) / 100)) / 12, 3) ?></td>
 		    	<td><?php echo $dep_inv['riesgo'] ?></td>
 		    	<td><?php echo $dep_inv['plazo_meses'] ?></td>
 		    	<td><?php echo $dep_inv['fecha_de_vencimiento'] ?></td>
