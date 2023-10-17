@@ -116,10 +116,10 @@ $precio_compra_ttl = 0;
 $provision_ttl = 0;
 if($posesiones__sala['posesiones__sala']){
 foreach ($posesiones__sala['posesiones__sala'] as $sala) {
-  $precio_compra_ttl += $sala['precio_compra'];
-  $provision_ttl += $sala['provision'];
-  $calc_prov_ttl_a_prov = ($sala['precio_compra'] * $sala['cantidad']);
-  $calc_prov_frequ_meses = ($sala['anos_para_cambio'] * 12);
+  $precio_compra_ttl += intval($sala['precio_compra']);
+  $provision_ttl += intval($sala['provision']);
+  $calc_prov_ttl_a_prov = (intval($sala['precio_compra']) * intval($sala['cantidad']));
+  $calc_prov_frequ_meses = (intval($sala['anos_para_cambio']) * 12);
   $posesiones__sala_item = [
     'concepto' => $sala['concepto'],
     'precio_compra' => $sala['precio_compra'],
