@@ -327,8 +327,8 @@ $deu_otr_tasa_count = 0;
 $saldo_otros_total = 0;
 if($otrosss['otros']){
 foreach ($otrosss['otros'] as $otros) {
-  $deu_otr_tasa_total += $otros['tasa_efectiva'];
-  $saldo_otros_total += $otros['saldo_a_la_fecha'];
+  $deu_otr_tasa_total += intval($otros['tasa_efectiva']);
+  $saldo_otros_total += intval($otros['saldo_a_la_fecha']);
   $deu_otr_tasa_count++;
 }}
 $deu_otr_tasa_avg = ($deu_otr_tasa_total > 0) ? ($deu_otr_tasa_count / $deu_otr_tasa_total) : 0;
