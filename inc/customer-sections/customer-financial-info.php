@@ -121,8 +121,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		        <th colspan="7" class="has-text-center"><h5>Vehículos</h5></th>
 		    </tr>
 		    <tr class="has-gray-bg">
-		        <th width="14.2%">Marca</th>
-		        <th width="14.2%">Modelo</th>
+		        <th width="14.2%">Marca - Modelo</th>
 		        <th width="14.2%">Año del carro</th>
 		        <th width="14.2%">A nombre de</th>
 		        <th width="14.2%">Año de compra</th>
@@ -152,7 +151,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		    ?>
 		    <tr>
 		    	<td><?php echo $vehicul['marca'] ?></td>
-		    	<td><?php echo $vehicul['modelo'] ?></td>
 		    	<td><?php echo $vehicul['ano_del_carro'] ?></td>
 		    	<td><?php echo $vehicul['a_nombre_de'] ?></td>
 		    	<td><?php echo $vehicul['ano_de_compra'] ?></td>

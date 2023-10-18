@@ -45,8 +45,25 @@ function fman_graduation_status_from_age($age){
 function custom_admin_styles() {
     wp_enqueue_style('custom-admin-css', get_stylesheet_directory_uri() . '/admin-assets/custom-admin.css');
     wp_enqueue_script('custom-admin-js', get_stylesheet_directory_uri() . '/admin-assets/custom-admin.js', array('jquery'), null, true);
+
+
+
+	if(isset($_GET['user_id'])){
+		$fish_cust_id = $_GET['user_id'];
+	} else {
+		$fish_cust_id = get_current_user_id();
+	}
+	$car_model_val = get_field('child_select', 'user_'.$fish_cust_id);
+    wp_localize_script('custom-admin-js', 'php_vars', array(
+        'car_model_val' => $car_model_val
+    ));
 }
 add_action('admin_enqueue_scripts', 'custom_admin_styles');
+
+
+
+
+
 
 
 
@@ -70,47 +87,6 @@ function add_custom_role() {
 }
 
 add_action('init', 'add_custom_role');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
